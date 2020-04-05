@@ -1,5 +1,27 @@
-<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>VR Minecraft</title>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    </head>
+    <body>
+        <a-scene>
+            <!-- Assets Manager for preloading -->
+            <a-assets>
+                <img
+                    id="groundTexture"
+                    src="https://cdn.aframe.io/a-painter/images/floor.jpg"
+                    crossorigin="anonymous"
+                />
+            </a-assets>
 
-<body>
-    <a-scene> </a-scene>
-</body>
+            <!-- Entities -->
+            <a-cylinder
+                id="ground"
+                src="#groundTexture"
+                radius="32"
+                height="0.1"
+            ></a-cylinder>
+        </a-scene>
+    </body>
+</html>
