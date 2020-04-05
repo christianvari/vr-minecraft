@@ -13,15 +13,23 @@
                     src="https://cdn.aframe.io/a-painter/images/floor.jpg"
                     crossorigin="anonymous"
                 />
+                <img
+                    id="skyTexture"
+                    src="https://cdn.aframe.io/a-painter/images/sky.jpg"
+                    crossorigin="anonymous"
+                />
             </a-assets>
 
             <!-- Entities -->
             <a-cylinder
                 id="ground"
                 src="#groundTexture"
-                radius="32"
+                radius="30"
                 height="0.1"
             ></a-cylinder>
+
+            <!-- theta-length defines the vertical angle of the sphere where src starts-->
+            <a-sky src="#skyTexture" theta-length="90" radius="30"></a-sky>
         </a-scene>
     </body>
 </html>
