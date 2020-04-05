@@ -3,6 +3,8 @@
     <head>
         <title>VR Minecraft</title>
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="./components/random-color.js"></script>
+        <script src="./components/snap.js"></script>
     </head>
     <body>
         <a-scene>
@@ -18,6 +20,13 @@
                     src="https://cdn.aframe.io/a-painter/images/sky.jpg"
                     crossorigin="anonymous"
                 />
+                <a-mixin
+                    id="voxel"
+                    geometry="primitive: box; height: 0.5; width: 0.5; depth: 0.5"
+                    material="shader: standard"
+                    random-color
+                    snap="offset: 0.25 0.25 0.25; snap: 0.5 0.5 0.5"
+                ></a-mixin>
             </a-assets>
 
             <!-- Entities -->
@@ -27,6 +36,16 @@
                 radius="30"
                 height="0.1"
             ></a-cylinder>
+
+            <a-entity mixin="voxel" position="-1 0 -2"></a-entity>
+            <a-entity mixin="voxel" position="0 0 -2"></a-entity>
+            <a-entity
+                mixin="voxel"
+                position="0 1 -2"
+                animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 2000"
+            >
+            </a-entity>
+            <a-entity mixin="voxel" position="1 0 -2"></a-entity>
 
             <!-- theta-length defines the vertical angle of the sphere where src starts-->
             <a-sky src="#skyTexture" theta-length="90" radius="30"></a-sky>
